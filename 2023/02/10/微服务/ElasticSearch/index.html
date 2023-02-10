@@ -30,7 +30,7 @@
 
 
   <title>
- |
+ElasticSearch基础 |
 IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -58,7 +58,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
+  <h1 itemprop="name headline">ElasticSearch基础
   </h1>
   
 <div class="meta">
@@ -100,12 +100,12 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -149,16 +149,13 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
   <div class="body md" itemprop="articleBody">
     
 
-    <hr>
-<h2 id="title-ElasticSearch基础"><a href="#title-ElasticSearch基础" class="headerlink" title="title:ElasticSearch基础"></a>title:ElasticSearch基础</h2><p>ElasticSearch的倒排索引是什么？</p>
-<p>倒排索引的底层是通过FST数据结构实现的，是通过分词策略，对词和文章映射产生映射关系表，词典加映射关系表就是倒排索引，<br>Lucene创建索引的原理</p>
-<p>Lucene创建索引是基于倒排索引原理实现的</p>
-<p>首先将原文档进行分词处理，形成一个个单独的单词<br>然后取出标点符号以及停词，形成词元<br>词元进行转换小写<br>将得到的词创建一个词典，按照字母顺序排序，并合并相同的词，最终形成一个倒排索引文档。<br>ES的keyword和text的区别</p>
-<p>keyword：不分词，直接建立索引，支持模糊查询，精确查询，聚合查询：通常用来保存手机号，年龄，名字等需要直接保存完整数据的场景<br>text：分词后建立索引，不支持聚合查询，通常用来储存全文搜索的数据，例如地址，文章内容。<br>ES的优势</p>
-<p>是基于Lucene的开源搜索引擎，它解决了原生的Lucene使用的不足，优化了Lucene的调用方式。<br>分布式的实时文件存储，每个字段都被索引并可被搜索<br>支持实时分析搜索<br>可以扩展到上百台服务器，处理PB级结构化或非结构化数据<br>通过简单的 RESTful API、可以跟各种语言的客户端甚至命令行进行交互<br>上手非常容易，只需很少的学习就可以在生产环境中使用<br>倒排索引的创建流程；</p>
-<p>首先将原文档进行分词处理，形成一个个单独的单词<br>然后取出标点符号以及停词，形成词元<br>词元进行转换小写<br>将得到的词创建一个词典，按照字母顺序排序，并合并相同的词，最终形成一个倒排索引文档。<br>Es&#x2F;Lucene为什么这么快</p>
-<p>ES是基于Lucene的全文检索引擎，它采用的是倒排索引结构，在存储时先对文档进行分词，再做一些标点符号去除，大小写时态转换等优化处理，最后按照字母顺序去重排序，形成一个倒排索引文档，我们在检索时，就可以通过二分查找的方式找到目标值。<br>Es用到了什么数据结构：</p>
-<p>Es用到了数据索引存储结构，底层是基于倒排索引实现的。</p>
+    <h1 id="ElasticSearch的倒排索引是什么？"><a href="#ElasticSearch的倒排索引是什么？" class="headerlink" title="ElasticSearch的倒排索引是什么？"></a>ElasticSearch的倒排索引是什么？</h1><p>倒排索引的底层是通过FST数据结构实现的，是通过分词策略，对词和文章映射产生映射关系表，词典加映射关系表就是倒排索引，<br>Lucene创建索引的原理</p>
+<h1 id="Lucene创建索引是基于倒排索引原理实现的"><a href="#Lucene创建索引是基于倒排索引原理实现的" class="headerlink" title="Lucene创建索引是基于倒排索引原理实现的"></a>Lucene创建索引是基于倒排索引原理实现的</h1><p>首先将原文档进行分词处理，形成一个个单独的单词<br>然后取出标点符号以及停词，形成词元<br>词元进行转换小写<br>将得到的词创建一个词典，按照字母顺序排序，并合并相同的词，最终形成一个倒排索引文档。</p>
+<h1 id="ES的keyword和text的区别"><a href="#ES的keyword和text的区别" class="headerlink" title="ES的keyword和text的区别"></a>ES的keyword和text的区别</h1><p>keyword：不分词，直接建立索引，支持模糊查询，精确查询，聚合查询：通常用来保存手机号，年龄，名字等需要直接保存完整数据的场景<br>text：分词后建立索引，不支持聚合查询，通常用来储存全文搜索的数据，例如地址，文章内容。</p>
+<h1 id="ES的优势"><a href="#ES的优势" class="headerlink" title="ES的优势"></a>ES的优势</h1><p>是基于Lucene的开源搜索引擎，它解决了原生的Lucene使用的不足，优化了Lucene的调用方式。<br>分布式的实时文件存储，每个字段都被索引并可被搜索<br>支持实时分析搜索<br>可以扩展到上百台服务器，处理PB级结构化或非结构化数据<br>通过简单的 RESTful API、可以跟各种语言的客户端甚至命令行进行交互<br>上手非常容易，只需很少的学习就可以在生产环境中使用</p>
+<h1 id="倒排索引的创建流程；"><a href="#倒排索引的创建流程；" class="headerlink" title="倒排索引的创建流程；"></a>倒排索引的创建流程；</h1><p>首先将原文档进行分词处理，形成一个个单独的单词<br>然后取出标点符号以及停词，形成词元<br>词元进行转换小写<br>将得到的词创建一个词典，按照字母顺序排序，并合并相同的词，最终形成一个倒排索引文档。</p>
+<h1 id="Es-x2F-Lucene为什么这么快"><a href="#Es-x2F-Lucene为什么这么快" class="headerlink" title="Es&#x2F;Lucene为什么这么快"></a>Es&#x2F;Lucene为什么这么快</h1><p>ES是基于Lucene的全文检索引擎，它采用的是倒排索引结构，在存储时先对文档进行分词，再做一些标点符号去除，大小写时态转换等优化处理，最后按照字母顺序去重排序，形成一个倒排索引文档，我们在检索时，就可以通过二分查找的方式找到目标值。</p>
+<h1 id="Es用到了什么数据结构："><a href="#Es用到了什么数据结构：" class="headerlink" title="Es用到了什么数据结构："></a>Es用到了什么数据结构：</h1><p>Es用到了数据索引存储结构，底层是基于倒排索引实现的。</p>
 
   </div>
 
@@ -170,9 +167,9 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-02-10 17:15:32" itemprop="dateModified" datetime="2023-02-10T17:15:32+08:00">2023-02-10</time>
+    <time title="修改时间：2023-02-10 17:41:55" itemprop="dateModified" datetime="2023-02-10T17:41:55+08:00">2023-02-10</time>
   </span>
-  <span id="2023/02/10/微服务/ElasticSearch/" class="item leancloud_visitors" data-flag-title="" title="阅读次数">
+  <span id="2023/02/10/微服务/ElasticSearch/" class="item leancloud_visitors" data-flag-title="ElasticSearch基础" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -214,7 +211,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://itarfan.gethub.io/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="">https://itarfan.gethub.io/2023/02/10/微服务/ElasticSearch/</a>
+    <a href="https://itarfan.gethub.io/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="ElasticSearch基础">https://itarfan.gethub.io/2023/02/10/微服务/ElasticSearch/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DSA=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -233,10 +230,10 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
     <div class="item left">
       
 
-  <a href="/2023/02/10/Web/Web/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesrnqv3j20zk0m8ava.jpg" title="未命名">
+  <a href="/2023/02/10/Web/Web/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="WEB基础">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>未命名</h3>
+  <h3>WEB基础</h3>
   </a>
 
     </div>
@@ -257,7 +254,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-ElasticSearch%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">title:ElasticSearch基础</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ElasticSearch%E7%9A%84%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">ElasticSearch的倒排索引是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lucene%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95%E6%98%AF%E5%9F%BA%E4%BA%8E%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95%E5%8E%9F%E7%90%86%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">Lucene创建索引是基于倒排索引原理实现的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES%E7%9A%84keyword%E5%92%8Ctext%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">ES的keyword和text的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">4.</span> <span class="toc-text">ES的优势</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9B"><span class="toc-number">5.</span> <span class="toc-text">倒排索引的创建流程；</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Es-x2F-Lucene%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-number">6.</span> <span class="toc-text">Es&#x2F;Lucene为什么这么快</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Es%E7%94%A8%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">Es用到了什么数据结构：</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -340,7 +337,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/02/10/NetworkSecurity/%E8%B0%B7%E6%AD%8C%E9%BB%91%E5%AE%A2%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/" title="未命名">未命名</a></span>
+    <span><a href="/2023/02/10/NetworkSecurity/%E8%B0%B7%E6%AD%8C%E9%BB%91%E5%AE%A2%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/" title="谷歌黑客搜索语法大全">谷歌黑客搜索语法大全</a></span>
   </li>
 
       
@@ -349,7 +346,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/02/10/Web/Web/" title="未命名">未命名</a></span>
+    <span><a href="/2023/02/10/java/java/" title="JAVA">JAVA</a></span>
   </li>
 
       
@@ -358,7 +355,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/02/10/java/java/" title="未命名">未命名</a></span>
+    <span><a href="/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="ElasticSearch基础">ElasticSearch基础</a></span>
   </li>
 
       
@@ -367,7 +364,16 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="未命名">未命名</a></span>
+    <span><a href="/2023/02/10/C&C++/C&C++/" title="C&amp;C++基础">C&C++基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/Web/Web/" title="WEB基础">WEB基础</a></span>
   </li>
 
       
@@ -377,15 +383,6 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
 </div>
 
     <span><a href="/2023/02/10/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/02/10/C&C++/C&C++/" title="未命名">未命名</a></span>
   </li>
 
   </ul>
@@ -407,7 +404,7 @@ IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</titl
     <span class="author" itemprop="copyrightHolder">IT_Arfan @ IT_Arfan</span>
   </div>
   <div class="powered-by">
-    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9pdGFyZmFuLmNu">ITArfan</span> & Blog.<span class="exturl" data-url="aHR0cHM6Ly9JVEFyZmFuLmdpdGh1Yi5pbw==">IT_Arfan</span>
   </div>
 </div>
 
