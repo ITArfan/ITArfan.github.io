@@ -1,0 +1,872 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/atom.xml" />
+<link rel="alternate" type="application/json" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://itarfan.gethub.io/2023/02/11/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/">
+
+
+
+  <title>
+Eclipse&基础语法&数据类型&常量&变量 |
+IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Eclipse&基础语法&数据类型&常量&变量
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-02-11 11:16:35">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-02-11T11:16:35+08:00">2023-02-11</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">IT_Arfan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://itarfan.gethub.io/2023/02/11/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="IT_Arfan">
+    <meta itemprop="description" content="=人情世故要看透,赤子之心不能丢=, 欢迎大家! 这个博客是我的私人博客。在这个博客里我将广泛讨论一系列IT话题,包括(但不限于)IT话题！！！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="IT_Arfan's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="1-课程介绍"><a href="#1-课程介绍" class="headerlink" title="1. 课程介绍"></a>1. <strong>课程介绍</strong></h1><ul>
+<li>Eclipse工具安装与使用【掌握】</li>
+<li>基本语法【掌握】</li>
+<li>数据类型与常量【掌握】</li>
+<li>变量【重点】</li>
+</ul>
+<h1 id="1-eclipse工具安装与使用"><a href="#1-eclipse工具安装与使用" class="headerlink" title="1. eclipse工具安装与使用"></a>1. <strong>eclipse工具安装与使用</strong></h1><h2 id="1-1-eclipse简介"><a href="#1-1-eclipse简介" class="headerlink" title="1.1 eclipse简介"></a>1.1 <strong>eclipse简介</strong></h2><p>Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，eclipse 附带了一个标准的插件集，包括Java开发工具Java Development Kit，JDK。对于开发人员而言，eclipse就是一个提高开发效率的工具。</p>
+<p>可自动帮助编译Java文件，简化运行流程。创建类 管理项目方式更为简单直观。</p>
+<h2 id="1-2-eclipse安装"><a href="#1-2-eclipse安装" class="headerlink" title="1.2 eclipse安装"></a>1.2 <strong>eclipse安装</strong></h2><p>  下载地址：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZWNsaXBzZS5vcmcv">https://www.eclipse.org/</span></p>
+<p>   eclipse分为绿色版和安装版，绿色版解压即可使用。</p>
+<p>   注：选择对应系统位数的安装版本  32位或者64位</p>
+<h2 id="1-3-eclipse使用"><a href="#1-3-eclipse使用" class="headerlink" title="1.3 eclipse使用"></a>1.3 <strong>eclipse使用</strong></h2><h3 id="1-3-1-eclipse启动"><a href="#1-3-1-eclipse启动" class="headerlink" title="1.3.1 eclipse启动"></a>1.3.1 <strong>eclipse启动</strong></h3><p>首次打开，弹出如下界面：（提示选择工作空间）</p>
+<p><img data-src="/img%5CwpsD534.tmp.jpg" alt="img"> </p>
+<p>img工作空间：工作空间指的是选择一个路径用来存放通过eclipse书写的代码存在的位置。img</p>
+<h3 id="1-3-2-菜单栏介绍"><a href="#1-3-2-菜单栏介绍" class="headerlink" title="1.3.2 菜单栏介绍"></a>1.3.2 <strong>菜单栏介绍</strong></h3><p><img data-src="/img%5CwpsD535.tmp.jpg" alt="img"> </p>
+<p>File: 创建文件或项目菜单</p>
+<p>Edit: 文件编辑相关</p>
+<p>Navigate: eclipse内相关导航设置</p>
+<p>Search：文件查找</p>
+<p>Project: 项目编译设置</p>
+<p>Run: 项目运行相关设置</p>
+<p>Windows : 工具视图设置。如字体 背景色等</p>
+<h3 id="1-3-3-创建工程"><a href="#1-3-3-创建工程" class="headerlink" title="1.3.3 创建工程"></a>1.3.3 <strong>创建工程</strong></h3><p><img data-src="/img%5CwpsD536.tmp.jpg" alt="img"> </p>
+<p>下图中：</p>
+<p>1.ProjectName 指工程或者项目名称，比如ERP（企业管理系统），OA（办公系统）。</p>
+<p>2.JRE - Java运行环境，选择1.8 这和eclipse版本有关.</p>
+<p>3.如果是老版本eclipse，这里可能没有. 使用默认就可以了.</p>
+<p>4.Project layout ：工程的输出.</p>
+<p>5.创建分开的文件文件用于存放src文件和存放class的文件.</p>
+<p><img data-src="/img%5CwpsD537.tmp.jpg" alt="img"><strong><img data-src="/img%5CwpsD548.tmp.jpg" alt="img"></strong> </p>
+<h3 id="2-2-4-新建Java类"><a href="#2-2-4-新建Java类" class="headerlink" title="2.2.4 新建Java类"></a><strong>2.2.4 新建Java类</strong></h3><p>方式1：(常用)</p>
+<p><img data-src="/img%5CwpsD549.tmp.jpg" alt="img"> </p>
+<p>方式2：</p>
+<p><img data-src="/img%5CwpsD54A.tmp.jpg" alt="img"> </p>
+<p>方式3:</p>
+<p><img data-src="/img%5CwpsD54B.tmp.jpg" alt="img"> </p>
+<p>注：</p>
+<p>三种方式，均需要在鼠标选中src的情况下，才会创建搭配src目录中。</p>
+<h3 id="2-2-5-eclipse基本设置"><a href="#2-2-5-eclipse基本设置" class="headerlink" title="2.2.5 eclipse基本设置"></a><strong>2.2.5 eclipse基本设置</strong></h3><p>**1.**eclipse 设置字符编码</p>
+<p>  为什么要设置，希望我们创建出来java文件保存都是utf-8</p>
+<p>Window –》 preferences–》general-》workspace</p>
+<p><strong>2</strong>.eclipse 调整字体大小</p>
+<p>Window –》 preferences–》general-》Appearance–》colors and Fonts –》baisc–》Textfont–》edit</p>
+<p>ctrl + &#x3D;</p>
+<p>**3.**eclipse调背景色</p>
+<p>Window–&gt;preferences-&gt;Editors-&gt;Text Editors-&gt;Background color</p>
+<p><strong>4.</strong> 显示行号</p>
+<p>右键点击源文件左边–》show line numbers</p>
+<p>**5.**eclipse 布局介绍</p>
+<ul>
+<li><p>String类结构怎么查看？ —-通过右边outline显示类结构图</p>
+</li>
+<li><p>如果写代码框太小，怎么办? 可以双击放大，双击变小.</p>
+</li>
+<li><p>当出现窗体拖乱之后，怎么办?</p>
+</li>
+<li><p>恢复eclipse经典布局样式： </p>
+<p>Window –reset Perspective</p>
+</li>
+<li><p>没有控制台怎么办?</p>
+<p>Window-show view -console</p>
+</li>
+</ul>
+<p>注：eclipse视图结构能够任意拖动</p>
+<p><strong>6</strong>.eclipse 自动编译</p>
+<p>​	Project–&gt;build automaticlly</p>
+<p><strong>7</strong>.java程序运行方式</p>
+<p>​	方式1：run图标   </p>
+<p>​	方式2：类文件右键  </p>
+<p>​	方式3：快捷键[常用]    Ctrl+F11(+ fn 笔记本)</p>
+<h2 id="4-1-Eclipse-hello版本实现"><a href="#4-1-Eclipse-hello版本实现" class="headerlink" title="4.1 Eclipse hello版本实现"></a>4.1 <strong>Eclipse hello版本实现</strong></h2><h1 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2. 基本语法"></a>2. <strong>基本语法</strong></h1><h2 id="2-1-Java注释"><a href="#2-1-Java注释" class="headerlink" title="2.1 Java注释"></a>2.1 <strong>Java注释</strong></h2><h3 id="2-1-1-注释概念"><a href="#2-1-1-注释概念" class="headerlink" title="2.1.1 注释概念"></a>2.1.1 <strong>注释概念</strong></h3><p><strong>注释</strong>：标注说明，写在java类中不同的位置，旨在帮助开发人员理解代码含义，对程序运行没有影响，提高代码可读性；</p>
+<h3 id="2-1-2-java注释分类"><a href="#2-1-2-java注释分类" class="headerlink" title="2.1.2 java注释分类"></a>2.1.2 <strong>java注释分类</strong></h3><ol>
+<li><p>单行注释</p>
+<p>语法：</p>
+<p>&#x2F;&#x2F;注释内容         以&#x2F;&#x2F;开始</p>
+</li>
+<li><p>多行注释</p>
+<p>语法：</p>
+<p>&#x2F;<em>注释内容</em>&#x2F;        以&#x2F;<em>开始  以</em>&#x2F;结束</p>
+</li>
+<li><p>文档注释</p>
+<p>语法：</p>
+<p>&#x2F;*<em>注释内容</em>&#x2F;        以&#x2F;*<em>开头  以</em>&#x2F;结束</p>
+</li>
+</ol>
+<p>注意事项：</p>
+<p>​	1.多行注释和文档注释不能相互嵌套</p>
+<ol start="2">
+<li><p>文档注释可以通过javadoc  类名.java 生成文档 会将注释内容显示出来</p>
+<p>如：javadoc Hello.java(注 类必须是public修饰的)</p>
+</li>
+</ol>
+<h3 id="2-1-3-基本使用"><a href="#2-1-3-基本使用" class="headerlink" title="2.1.3 基本使用"></a>2.1.3 <strong>基本使用</strong></h3><p>1.目前学习阶段写注释：</p>
+<p>(1)类名前面写概念，主要演示的知识点，实现思路</p>
+<p>(2)具体代码处，写对于知识点的理解【注释标记】</p>
+<p>(3)在当前代码中对前段知识回顾【注释标记说明】</p>
+<p>2.日后工作中写注释</p>
+<p>(1)写代码时候养成写注释的习惯－－&gt;　代码的可读性增强</p>
+<p>(2)功能实现思路　　流程　</p>
+<p>(3)解释关键代码</p>
+<p>(4)类的整体描述；　字段　　方法　　构造方法前面都会写注释（用文档注释）</p>
+<h2 id="2-2-分隔符"><a href="#2-2-分隔符" class="headerlink" title="2.2 分隔符"></a>2.2 <strong>分隔符</strong></h2><p>2</p>
+<p>注意：必须都是半角下的英文符号。</p>
+<p>注意：有时候写的代码其实并没有问题，可能是工具，文件目录的路劲存在特殊符号中文等等情况导致代码运行不正确  C盘也操作不了【权限】</p>
+<h2 id="2-3-关键字"><a href="#2-3-关键字" class="headerlink" title="2.3 关键字"></a>2.3 <strong>关键字</strong></h2><h3 id="2-3-1-关键字概念"><a href="#2-3-1-关键字概念" class="headerlink" title="2.3.1 关键字概念"></a>2.3.1 <strong>关键字概念</strong></h3><p>关键字： 其实就是在设计java语言的时候赋予特殊意义的单词</p>
+<h3 id="2-3-2-关键字认识及特点"><a href="#2-3-2-关键字认识及特点" class="headerlink" title="2.3.2 关键字认识及特点"></a>2.3.2 <strong>关键字认识及特点</strong></h3><p>特点：所有的字母全部小写 :  如下Java中的关键字</p>
+<table>
+<thead>
+<tr>
+<th><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEwMjIzODMuaHRt">public</span></th>
+<th><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3Lzc2NzExLmh0bQ==">class</span></th>
+<th><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyMjk4NjcuaHRt">boolean</span></th>
+<th>break</th>
+<th><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQ0MjQzLmh0bQ==">byte</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>case</td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzE5MDg4OTkuaHRt">catch</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEwMDY1MTkuaHRt">char</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzY1MzkyNS5odG0=">assert</span></td>
+<td>const</td>
+</tr>
+<tr>
+<td>continue</td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzExMDk5NDUuaHRt">default</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyNjk2OC5odG0=">do</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3Lzg2MDEyNC5odG0=">double</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzIyNDk4OTEuaHRt">else</span></td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzgyNzMyNi5odG0=">enum</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3Lzc0NTUwMS5odG0=">extends</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzIxMTY4MjEuaHRt">final</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEzNzA2MS5odG0=">finally</span></td>
+<td>float</td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyNDk0OC5odG0=">for</span></td>
+<td>goto</td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyNzE1Ni5odG0=">if</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzI0MjQ2ODMuaHRt">implements</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzIxMTcwMjIuaHRt">import</span></td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzE5ODkwNTIuaHRt">instanceof</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzgwNDQxMy5odG0=">int</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzMzNDc1Ni5odG0=">interface</span></td>
+<td>long</td>
+<td>native</td>
+</tr>
+<tr>
+<td>new</td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEwMDY1NjguaHRt">package</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzUxNjE1Lmh0bQ==">private</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzgzMzUxMi5odG0=">protected</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyMjgxNC5odG0=">abstract</span></td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEzNTA1MTIuaHRt">return</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzE4NjY2MjIuaHRt">strictfp</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3Lzk4MTIwNi5odG0=">short</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzUzNjE0NS5odG0=">static</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQ5NjkzNy5odG0=">super</span></td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzYwMDE2MS5odG0=">switch</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEyMDcyMTIuaHRt">synchronized</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzYyNjI5Ny5odG0=">this</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzMwMTkxMjYuaHRt">throw</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS9pdGVtL3Rocm93cw==">throws</span></td>
+</tr>
+<tr>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzE2OTgxNzMuaHRt">transient</span></td>
+<td>try</td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzEwMDQ3MzQuaHRt">void</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzYwODcwNi5odG0=">volatile</span></td>
+<td><span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzE0NTUwMDMuaHRt">while</span></td>
+</tr>
+</tbody></table>
+<p>(不用刻意去记，以上关键字都会在以后的学习中逐渐重复的使用)</p>
+<h2 id="2-4-保留字"><a href="#2-4-保留字" class="headerlink" title="2.4 保留字"></a>2.4 <strong>保留字</strong></h2><p>还有些关键字,如cat、 future、 generic、innerr、 operator、 outer、rest、var  goto  const等都是Java保留的没有意义的关键字。</p>
+<p>另外，Java还有3个[保留字]:true、false、null。它们不是关键字，而是文字。包含Java定义的值。和关键字一样,它们也不可以作为[标识符使用。</p>
+<h2 id="2-5-标识符"><a href="#2-5-标识符" class="headerlink" title="2.5 标识符"></a>2.5 <strong>标识符</strong></h2><h3 id="2-5-1-标识符概念"><a href="#2-5-1-标识符概念" class="headerlink" title="2.5.1 标识符概念"></a>2.5.1 <strong>标识符概念</strong></h3><p>Java所有的组成部分都需要名字[标识]、类名、变量名以及方法名都被称为标识符。</p>
+<p>可以对如上：类名，方法名，变量名：可以命名，标注识别</p>
+<h3 id="2-5-2-标识符规定"><a href="#2-5-2-标识符规定" class="headerlink" title="2.5.2 标识符规定"></a>2.5.2 <strong>标识符规定</strong></h3><ol>
+<li>所有的标识符都应该以字母（A-Z或者a-z）,美元符（$）、或者下划线（_），开始。与数字构成（不能以数字开头）</li>
+</ol>
+<p>2）类名首字母必须大写</p>
+<ol start="3">
+<li><a href="#_%E5%85%B3%E9%94%AE%E5%AD%97">关键字</a>不能用作标识符</li>
+</ol>
+<p>4)以后取名字 不能用关键字取名</p>
+<ol start="5">
+<li>标识符是大小写敏感的（java代码中大小严格区分）</li>
+</ol>
+<h3 id="2-5-3-标识符书写规范"><a href="#2-5-3-标识符书写规范" class="headerlink" title="2.5.3 标识符书写规范"></a>2.5.3 <strong>标识符书写规范</strong></h3><ol>
+<li><p>一般不建议使用$ 及下划线_作为起始符号（阿里编码规范）</p>
+</li>
+<li><p>一般来说都是取一些有意义的单词  age  见名知意</p>
+</li>
+<li><p>类名首字母必须大写ChinaEnglish</p>
+</li>
+<li><p>方法名，变量名 首字母小写 getWord(); ageNumKey</p>
+</li>
+</ol>
+<p>​		如果是有多个单词组成，后面每一个单词首字母大写</p>
+<ol start="5">
+<li>驼峰命名规则</li>
+</ol>
+<h1 id="3-数据类型-amp-常量"><a href="#3-数据类型-amp-常量" class="headerlink" title="3. 数据类型&amp;常量"></a>3. <strong>数据类型&amp;常量</strong></h1><h2 id="3-1-常量"><a href="#3-1-常量" class="headerlink" title="3.1 常量"></a>3.1 <strong>常量</strong></h2><p>一个固定不变的量（或者值）已知的值。例如 123,45,1.2，false等。</p>
+<h2 id="3-2-数据类型"><a href="#3-2-数据类型" class="headerlink" title="3.2 数据类型"></a>3.2 <strong>数据类型</strong></h2><p>生活中，数据都是有类型这个概念的，比如张三 18 岁，18 这个数字就是整型的，买了 2.5 斤菜，2.5 就是小数类型的，在 Java 中每一个数据也有数据类型。</p>
+<p><img data-src="/img%5CwpsD55B.tmp.jpg" alt="img"> </p>
+<p>8 种基本数据数据类型的范围和占内存大小（了解）： </p>
+<p>常用的整数类型是 int 和 long，byte 和 short 基本不用，常用的小数类型是 double，float 基本不用。 </p>
+<p>因为 double 是不精确的，在实际开发中表示精确的小数我们使用 BigDecimal 类（后面学）。</p>
+<p><img data-src="/img%5CwpsD55C.tmp.jpg" alt="img"> </p>
+<p>   计算机存储数据：存储在硬盘【磁盘】，硬盘中的方式都是用的img二进制img数据的方式进行存储   01010101010101010101010101010101</p>
+<p>计算机底层本质存储的数据形式就是二进制数据:例如  0101010101010101</p>
+<h2 id="3-3-基本数据类型"><a href="#3-3-基本数据类型" class="headerlink" title="3.3 基本数据类型"></a>3.3 <strong>基本数据类型</strong></h2><h3 id="3-3-1-整数类型"><a href="#3-3-1-整数类型" class="headerlink" title="3.3.1 整数类型"></a>3.3.1 <strong>整数类型</strong></h3><p>整数类型 包含 byte  short  int long  </p>
+<p><strong>所有整数的默认类型都为int</strong></p>
+<p><img data-src="/img%5CwpsD55D.tmp.jpg" alt="img"> </p>
+<p>为什么需要整数有四种类型？</p>
+<p>因为不同的数据类型 能够申请内存空间不一样 能够存储的值范围也就不一样</p>
+<p>注意事项：</p>
+<ol>
+<li><p>byte的范围大小 [-128,127]</p>
+</li>
+<li><p>long赋值时，因为整数默认是int类型，要转换为long类型的值，后面加上l或L</p>
+</li>
+<li><p>如果超过了long的范围，后面会学习到一个BigInteger的类来存放其值</p>
+</li>
+<li><p>同一个整数可以使用不同的进制表示</p>
+</li>
+</ol>
+<h3 id="3-3-2-浮点数类型"><a href="#3-3-2-浮点数类型" class="headerlink" title="3.3.2 浮点数类型"></a>3.3.2 <strong>浮点数类型</strong></h3><p>浮点数类型包括  float double</p>
+<p>​	<strong>所有浮点数默认类型都为double</strong></p>
+<p>​	浮点数可以理解位表示的小数;</p>
+<p><img data-src="/img%5CwpsD56E.tmp.jpg" alt="img"><img data-src="/img%5CwpsD56F.tmp.jpg" alt="img"> </p>
+<p>注意事项：</p>
+<p>1.直接赋值给单精度的浮点数 需要加上F或f,因为默认类型都为double</p>
+<p>2.精度损失  如double d &#x3D;1.0 表示的是无限趋势与1的一个数</p>
+<pre><code>   示例：1.3*1.4
+  
+   如果需要精确的表示一个小数，可以使用后面学到的BigDecimal
+</code></pre>
+<p>3.单精度双精度区别：</p>
+<p>​	- 对于单精度浮点数，运行速度相比double更快，占内存更小，</p>
+<p>​	- 但是当数值非常大或者非常小的时候会变得不精确。</p>
+<p>​	- 双精度比单精度表示的位数大 精确的位数多,简单地说, float表示的小数点位数少。</p>
+<h3 id="3-3-3-字符类型"><a href="#3-3-3-字符类型" class="headerlink" title="3.3.3 字符类型"></a>3.3.3 <strong>字符类型</strong></h3><p><img data-src="/img%5CwpsD570.tmp.jpg" alt="img"><img data-src="/img%5CwpsD571.tmp.jpg" alt="img"> </p>
+<p>1.什么是字符：单引号引起来的一个符号就是字符数据   例如：’A’</p>
+<p>2.存储单位16 位[0-65535]  [2个字节,16位]。字符常量使用单引号 ‘’包裹起来。</p>
+<p>3.表现形式：</p>
+<p>1)‘A’最常用，最直观的方式	</p>
+<ol start="2">
+<li><p>使用一个数字表示，对应有一个ASCII码表[ 字符编码 ]</p>
+<pre><code>               例如:char c = 65;//表示 ‘A’ 这个字符
+</code></pre>
+</li>
+</ol>
+<p>3)16进制表现形式</p>
+<pre><code>                       ‘A’-》65（10进制）
+ 
+              		&#39;A&#39;  -》0x41（16进制）怎么表示？ ‘\u0041’
+</code></pre>
+<p>4)特殊符号(需要使用转义符号转义)</p>
+<ol>
+<li><p>\r 表示接受键盘输入，相当于按下了回车键；</p>
+</li>
+<li><p>\n 表示换行；</p>
+<p>3.\t 表示相当于Table键制表符，；</p>
+</li>
+<li><p>\b表示退格键，相当于Back Space键；</p>
+</li>
+<li><p>&#39; 表示单引号；</p>
+</li>
+<li><p>&#39;‘ 表示双引号；</p>
+</li>
+<li><p>\ 表示一个斜杠\。</p>
+</li>
+</ol>
+<p>4.字符数据可以当成一个整数来使用，</p>
+<p>5.什么是asscii表，类似化学元素周期表</p>
+<p><img data-src="/img%5CwpsD572.tmp.png" alt="img"> </p>
+<h3 id="3-3-4-布尔类型"><a href="#3-3-4-布尔类型" class="headerlink" title="3.3.4 布尔类型"></a>3.3.4 <strong>布尔类型</strong></h3><p><img data-src="/img%5CwpsD582.tmp.jpg" alt="img"><img data-src="/img%5CwpsD583.tmp.jpg" alt="img"> </p>
+<p>值只有两个 true false，不能使用 0  1表示 0表示false 1表示true</p>
+<h2 id="3-4-引用数据类型"><a href="#3-4-引用数据类型" class="headerlink" title="3.4 引用数据类型"></a>3.4 <strong>引用数据类型</strong></h2><p>除了基本类型以外，几乎所有的其他类型都拥有自己的属性以及方法，那么这种类型我们就称它为引用类型。</p>
+<p>如：java自带的类  自定义的类  接口 枚举 数组等都属于引用数据类型。</p>
+<p>String 类是java中一种自带的引用数据类型  经常被使用，它表示一个字符串。相当于是多个字符。</p>
+<p>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span>  <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>;</span><br><span class="line"><span class="number">2.</span>当String 和 + 一起使用的时候，这时候+ 是拼接字符串的功能。</span><br><span class="line"><span class="type">String</span>  <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;你好&quot;</span>+<span class="number">2</span>;</span><br><span class="line">System.out.println(s);<span class="comment">//你好2 此时的加号表示连接作用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-常量分类"><a href="#3-5-常量分类" class="headerlink" title="3.5 常量分类"></a>3.5 <strong>常量分类</strong></h2><p>整数常量，所有整数，如 1、2、3、100、200 等 </p>
+<p>n 小数常量，所有小数，如 1.2、2.7、3.14 等 </p>
+<p>n 字符常量，0~65535 之间的整数或用单引号括起来的符号如，‘A’、‘a’、‘姚’等 </p>
+<p>n 布尔常量，只有 true 和 false，分别表示对与错 </p>
+<p>n 字符串常量，使用双引号括起来的内容如：“Will”、“itsource”等</p>
+<h1 id="4-变量"><a href="#4-变量" class="headerlink" title="4. 变量"></a>4. <strong>变量</strong></h1><h2 id="4-1-引入"><a href="#4-1-引入" class="headerlink" title="4.1 引入"></a>4.1 <strong>引入</strong></h2><p>讲变量之前我们先通过一张不完整的房屋租赁合同，来理解一下什么是变量。 </p>
+<p>案例：张三需要租赁李四的房屋，租赁合同如下： </p>
+<table>
+<thead>
+<tr>
+<th>上述合同，相当不正规，因为正规的合同上，租客和房东都是有变动的，不能写死，在整个合同中应 该是使用甲方来表示房东，乙方来表示租客，只会在最后的时候签名甲方是谁，乙方是谁。<img data-src="/img%5CwpsD584.tmp.jpg" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img data-src="/img%5CwpsD585.tmp.jpg" alt="img">像我们甲方和乙方一样，我们只是定义，我们给他们指定谁就是谁，可以变化的。就类似我们的变量。那我们接下来详细学习一下变量</td>
+</tr>
+</tbody></table>
+<h2 id="4-2-变量定义"><a href="#4-2-变量定义" class="headerlink" title="4.2 变量定义"></a>4.2 <strong>变量定义</strong></h2><p>变量是内存中的一个存储区域，该区域有自己的名称（变量名）和类型（数据类型），Java中每个变量必须先声明，后使用， 该区域的数据可以在同一类型范围内不断变化。  程序运行过程中它的值是允许改变的量。 </p>
+<p><img data-src="/img%5CwpsD596.tmp.jpg" alt="img"> </p>
+<p>(变量可以理解理解为装某种类型数据的容器，容器可以重复使用)</p>
+<h2 id="4-3-变量的语法"><a href="#4-3-变量的语法" class="headerlink" title="4.3 变量的语法"></a>4.3 <strong>变量的语法</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>先定义后赋值</span><br><span class="line">     数据类型 变量名;</span><br><span class="line">	 变量名 = 值;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">	i = <span class="number">5</span>;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">----------------------------------------------</span><br><span class="line"><span class="number">2.</span>定义的同时赋值</span><br><span class="line">     数据类型 变量名 =  值;</span><br><span class="line">     <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">	 System.out.println(i);</span><br><span class="line">-----------------------------------------------    </span><br><span class="line"><span class="number">3.</span> 一次性声明多个同种类型的变量</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">5</span>,j=<span class="number">6</span>,k=<span class="number">7</span>;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">	System.out.println(j);</span><br><span class="line">	System.out.println(k);</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p> 注意事项：</p>
+<ol>
+<li><p>此处的数据类型可以是Java中支持的所有的数据类型！</p>
+</li>
+<li><p>数据类型限定了变量可以存值的类型</p>
+</li>
+<li><p>赋值使用的  &#x3D;  号，从右往左赋值</p>
+</li>
+<li><p>规范写法：&#x3D; 两边都加上一个空格</p>
+</li>
+<li><p>变量一旦定义好了，可以反复使用</p>
+</li>
+<li><p>变量只可以存一次值，下次存值会覆盖上一次的值</p>
+</li>
+</ol>
+<h2 id="4-4-变量的分类"><a href="#4-4-变量的分类" class="headerlink" title="4.4 变量的分类"></a>4.4 <strong>变量的分类</strong></h2><p>变量按照声明的位置或作用范围分为成员变量和局部变量。</p>
+<h3 id="4-4-1-成员变量"><a href="#4-4-1-成员变量" class="headerlink" title="4.4.1 成员变量"></a>4.4.1 <strong>成员变量</strong></h3><p>成员变量声明在类结构体中，可以放在方法的上方或者下方。</p>
+<p>成员变量与方法是平级的</p>
+<p><strong>特点：</strong></p>
+<p>1.成员变量如果没有赋予初始值，系统自动分配默认值，分配的默认值根据数据类型的不同而不同；</p>
+<p>​		整型数据默认值为  0；</p>
+<p>​		浮点数类型默认值为  0.0；</p>
+<p>​		布尔类型默认值为  false;</p>
+<p>​		字符类型默认值为  &#x2F;u0000；(表示空的意思)</p>
+<p>2.如果main主方法中使用到成员变量，成员变量必须加上static修饰；（因为静态区域不能引用非静态上下文的变量）</p>
+<h3 id="4-4-2-局部变量"><a href="#4-4-2-局部变量" class="headerlink" title="4.4.2 局部变量"></a>4.4.2 <strong>局部变量</strong></h3><p>局部变量声明在方法内部或花括号结构体中，如main方法中。</p>
+<p><strong>特点：</strong></p>
+<p>局部变量没有默认值，因此使用之前必须要赋予初始值，如果不使用可以不赋予值，但这样声明的局部变量没有任何意义，只会占用内存空间；</p>
+<h3 id="4-4-3-局部变量与成员变量区别"><a href="#4-4-3-局部变量与成员变量区别" class="headerlink" title="4.4.3 局部变量与成员变量区别"></a>4.4.3 <strong>局部变量与成员变量区别</strong></h3><p>​	1.声明位置</p>
+<p>​	成员变量声明在类中，局部变量声明在方法或花括号结构体中；</p>
+<p>​	2.作用范围</p>
+<p>   成员变量在整个类结构中均可使用，局部变量只能在当前声明的花括号结构体中有效；</p>
+<p>​	3.初始值</p>
+<p>   成员变量使用之前可以不赋予初始值，系统根据数据类型分配默认值，</p>
+<p>   局部变量使用之前必须赋予初始值，没有默认值</p>
+<p>   注意事项:</p>
+<p>​	同一个类中，如果成员变量与局部变量重名，实际使用到的是就近的局部变量的值</p>
+<p>练习：</p>
+<p>交换2个变量里面的数据，例如 变量 a&#x3D; 3;b&#x3D;5; 交换后则变成：a&#x3D;5,b&#x3D;3;</p>
+<h1 id="5-课程总结"><a href="#5-课程总结" class="headerlink" title="5. 课程总结"></a>5. <strong>课程总结</strong></h1><p>今天的知识点相对而言都比较重要，需要多加练习，水滴石穿，不断的积累java变成的基础知识，终将一日变成大神。</p>
+<p>知识点繁多，注重知识体系梳理，记忆方式。</p>
+<h2 id="5-1-重点"><a href="#5-1-重点" class="headerlink" title="5.1 重点"></a>5.1 <strong>重点</strong></h2><p>变量  </p>
+<h2 id="5-2-难点"><a href="#5-2-难点" class="headerlink" title="5.2 难点"></a>5.2 <strong>难点</strong></h2><h1 id="6-课后练习"><a href="#6-课后练习" class="headerlink" title="6. 课后练习"></a>6. <strong>课后练习</strong></h1><ol>
+<li><p>列举java基本数据类型，并使用基本数据类型分别创建一个示例。</p>
+</li>
+<li><p>使用int类型 声明变量age1和age2。</p>
+<p>age1 赋值为自己的年龄。</p>
+<p>age2 赋值为朋友的年龄。</p>
+<p>计算出年龄之和。</p>
+</li>
+<li><p>使用String类型声明姓名name，int类型声明年龄age</p>
+<p>如：姓名为：小明 年龄：20</p>
+<p>String name &#x3D; “小明”；</p>
+<p>int age &#x3D; 20；</p>
+<p>打印语句输出： 姓名 ：小明 年龄：20 岁</p>
+</li>
+<li><p>解释变量的概念及变量分类及作用域。</p>
+</li>
+<li><p>以下两个类，分别位于不同源文件，请问编译是否报错？如有报错，请指出?</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">    <span class="keyword">static</span>  <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.println(i);<span class="comment">//作用域</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">hehe</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="6">
+<li>编写程序交换两个变量的值，如：int a&#x3D;4,int b&#x3D;7交换两个变量的值，交换后：a&#x3D;7,b&#x3D;4;</li>
+</ol>
+<h1 id="7-面试题"><a href="#7-面试题" class="headerlink" title="7. 面试题"></a>7. <strong>面试题</strong></h1><p>成员变量与局部变量的区别?</p>
+<h1 id="8-扩展知识或课外阅读推荐"><a href="#8-扩展知识或课外阅读推荐" class="headerlink" title="8. 扩展知识或课外阅读推荐"></a>8. <strong>扩展知识或课外阅读推荐</strong></h1><h1 id="9-每日一练"><a href="#9-每日一练" class="headerlink" title="9. 每日一练"></a>9. <strong>每日一练</strong></h1>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-02-11 11:29:26" itemprop="dateModified" datetime="2023-02-11T11:29:26+08:00">2023-02-11</time>
+  </span>
+  <span id="2023/02/11/Eclipse&基础语法&数据类型&常量&变量/Eclipse&基础语法&数据类型&常量&变量/" class="item leancloud_visitors" data-flag-title="Eclipse&基础语法&数据类型&常量&变量" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="IT_Arfan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="IT_Arfan 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="IT_Arfan 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>IT_Arfan <i class="ic i-at"><em>@</em></i>IT_Arfan's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://itarfan.gethub.io/2023/02/11/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/" title="Eclipse&amp;基础语法&amp;数据类型&amp;常量&amp;变量">https://itarfan.gethub.io/2023/02/11/Eclipse&基础语法&数据类型&常量&变量/Eclipse&基础语法&数据类型&常量&变量/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DSA=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/02/10/Inter/01_java%E9%9D%A2%E8%AF%95%E9%A2%98%E5%85%A8%E8%A6%86%E7%9B%96-%E9%A1%BA%E5%BA%8F%E8%B0%83%E6%95%B4%E7%89%88/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxxcb6rj20zk0m8b29.jpg" title="面试题">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>面试题</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj61ylzj20zk0m8b29.jpg" title="JAVA语法基础-变量&amp;表达式&amp;类型转换&amp;运算符">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>JAVA语法基础-变量&表达式&类型转换&运算符</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1. 课程介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-eclipse%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">1. eclipse工具安装与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-eclipse%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 eclipse简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-eclipse%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 eclipse安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-eclipse%E4%BD%BF%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 eclipse使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-eclipse%E5%90%AF%E5%8A%A8"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 eclipse启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E8%8F%9C%E5%8D%95%E6%A0%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 菜单栏介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 创建工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E6%96%B0%E5%BB%BAJava%E7%B1%BB"><span class="toc-number">2.3.4.</span> <span class="toc-text">2.2.4 新建Java类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-eclipse%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.5.</span> <span class="toc-text">2.2.5 eclipse基本设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Eclipse-hello%E7%89%88%E6%9C%AC%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.4.</span> <span class="toc-text">4.1 Eclipse hello版本实现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">2. 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Java%E6%B3%A8%E9%87%8A"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Java注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E6%B3%A8%E9%87%8A%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.1.1 注释概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-java%E6%B3%A8%E9%87%8A%E5%88%86%E7%B1%BB"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.1.2 java注释分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.3.</span> <span class="toc-text">2.1.3 基本使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 分隔符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E5%85%B3%E9%94%AE%E5%AD%97%E6%A6%82%E5%BF%B5"><span class="toc-number">3.3.1.</span> <span class="toc-text">2.3.1 关键字概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%E5%85%B3%E9%94%AE%E5%AD%97%E8%AE%A4%E8%AF%86%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.3.2 关键字认识及特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E4%BF%9D%E7%95%99%E5%AD%97"><span class="toc-number">3.4.</span> <span class="toc-text">2.4 保留字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">3.5.</span> <span class="toc-text">2.5 标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%E6%A0%87%E8%AF%86%E7%AC%A6%E6%A6%82%E5%BF%B5"><span class="toc-number">3.5.1.</span> <span class="toc-text">2.5.1 标识符概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%E6%A0%87%E8%AF%86%E7%AC%A6%E8%A7%84%E5%AE%9A"><span class="toc-number">3.5.2.</span> <span class="toc-text">2.5.2 标识符规定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-%E6%A0%87%E8%AF%86%E7%AC%A6%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83"><span class="toc-number">3.5.3.</span> <span class="toc-text">2.5.3 标识符书写规范</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-amp-%E5%B8%B8%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">3. 数据类型&amp;常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%B8%B8%E9%87%8F"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.3.1 整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.3.2 浮点数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3.3 字符类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.3.4 布尔类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 引用数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E5%B8%B8%E9%87%8F%E5%88%86%E7%B1%BB"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 常量分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%8F%98%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">4. 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%BC%95%E5%85%A5"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 变量定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E5%8F%98%E9%87%8F%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 变量的语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">5.4.</span> <span class="toc-text">4.4 变量的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">5.4.1.</span> <span class="toc-text">4.4.1 成员变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">5.4.2.</span> <span class="toc-text">4.4.2 局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-3-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%8C%BA%E5%88%AB"><span class="toc-number">5.4.3.</span> <span class="toc-text">4.4.3 局部变量与成员变量区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">5. 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E9%87%8D%E7%82%B9"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 重点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E9%9A%BE%E7%82%B9"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 难点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E8%AF%BE%E5%90%8E%E7%BB%83%E4%B9%A0"><span class="toc-number">7.</span> <span class="toc-text">6. 课后练习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">8.</span> <span class="toc-text">7. 面试题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E6%89%A9%E5%B1%95%E7%9F%A5%E8%AF%86%E6%88%96%E8%AF%BE%E5%A4%96%E9%98%85%E8%AF%BB%E6%8E%A8%E8%8D%90"><span class="toc-number">9.</span> <span class="toc-text">8. 扩展知识或课外阅读推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%83"><span class="toc-number">10.</span> <span class="toc-text">9. 每日一练</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="IT_Arfan"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">IT_Arfan</p>
+  <div class="description" itemprop="description">欢迎大家! 这个博客是我的私人博客。在这个博客里我将广泛讨论一系列IT话题,包括(但不限于)IT话题！！！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">14</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnlvdXJuYW1lQG1haWwuY29t" title="mailto:yourname@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/02/10/Inter/01_java%E9%9D%A2%E8%AF%95%E9%A2%98%E5%85%A8%E8%A6%86%E7%9B%96-%E9%A1%BA%E5%BA%8F%E8%B0%83%E6%95%B4%E7%89%88/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/C&C++/C&C++/" title="C&amp;C++基础">C&C++基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" title="JAVA语法基础-嵌套循环结构">JAVA语法基础-嵌套循环结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/" title="Eclipse&amp;基础语法&amp;数据类型&amp;常量&amp;变量">Eclipse&基础语法&数据类型&常量&变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/Web/Web/" title="WEB基础">WEB基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/NetworkSecurity/%E8%B0%B7%E6%AD%8C%E9%BB%91%E5%AE%A2%E6%90%9C%E7%B4%A2%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/" title="谷歌黑客搜索语法大全">谷歌黑客搜索语法大全</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="ElasticSearch基础">ElasticSearch基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" title="JAVA语法基础-选择结构&amp;循环结构">JAVA语法基础-选择结构&循环结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" title="面向对象1-类和对象">面向对象1-类和对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F&%E8%A1%A8%E8%BE%BE%E5%BC%8F&%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2&%E8%BF%90%E7%AE%97%E7%AC%A6/" title="JAVA语法基础-变量&amp;表达式&amp;类型转换&amp;运算符">JAVA语法基础-变量&表达式&类型转换&运算符</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">IT_Arfan @ IT_Arfan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9pdGFyZmFuLmNu">ITArfan</span> & Blog.<span class="exturl" data-url="aHR0cHM6Ly9JVEFyZmFuLmdpdGh1Yi5pbw==">IT_Arfan</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/02/11/Eclipse&基础语法&数据类型&常量&变量/Eclipse&基础语法&数据类型&常量&变量/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

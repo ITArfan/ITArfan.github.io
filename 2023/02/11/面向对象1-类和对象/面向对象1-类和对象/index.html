@@ -1,0 +1,640 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/atom.xml" />
+<link rel="alternate" type="application/json" title="IT_Arfan's Blog" href="https://itarfan.gethub.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://itarfan.gethub.io/2023/02/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+
+
+
+  <title>
+面向对象1-类和对象 |
+IT_Arfan = IT_Arfan's Blog = =人情世故要看透,赤子之心不能丢=</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">面向对象1-类和对象
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-02-11 11:22:12">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-02-11T11:22:12+08:00">2023-02-11</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">IT_Arfan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://itarfan.gethub.io/2023/02/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="IT_Arfan">
+    <meta itemprop="description" content="=人情世故要看透,赤子之心不能丢=, 欢迎大家! 这个博客是我的私人博客。在这个博客里我将广泛讨论一系列IT话题,包括(但不限于)IT话题！！！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="IT_Arfan's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>​               </p>
+<h1 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h1><ul>
+<li>初识面向对象（了解）</li>
+<li>什么是类与对象（了解）</li>
+<li>类的设计（掌握）</li>
+<li>对象的创建与赋值取值（掌握）</li>
+<li>构造方法（掌握）</li>
+</ul>
+<p><strong>最近几天重点：（掌握）面向对象中的基本语法</strong></p>
+<h1 id="1-初识面向对象"><a href="#1-初识面向对象" class="headerlink" title="1 初识面向对象"></a><strong>1</strong> <strong>初识面向对象</strong></h1><h1 id="1-面向过程-：是一种编程思想，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。"><a href="#1-面向过程-：是一种编程思想，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。" class="headerlink" title="1. 面向过程 ：是一种编程思想，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。"></a><strong>1</strong>. <strong>面向过程 ：是一种编程思想，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。</strong></h1><p>我要造辆车：</p>
+<p>Step1. 设计画图</p>
+<p>Step2. 找矿&#x3D;&gt;挖矿&#x3D;&gt;炼铁&#x3D;&gt;打铁&#x3D;&gt;制作车体 </p>
+<p>Step3. 生产发动机、变速箱等</p>
+<p>Step4. 养牛&#x3D;&gt;庖丁解牛&#x3D;&gt;（如果没解好，牛皮破了—&gt;重养）牛皮&#x3D;&gt;座椅</p>
+<p>Step5. 种树&#x3D;&gt;炼橡胶&#x3D;&gt;轮胎</p>
+<p>Step6. 组装</p>
+<p>Step7. 测试</p>
+<h2 id="1-2-面向对象-：-就是一种编程思想，是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。"><a href="#1-2-面向对象-：-就是一种编程思想，是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。" class="headerlink" title="1**.**2 面向对象 ： 就是一种编程思想，是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。"></a><strong>1</strong>**.**<strong>2</strong> <strong>面向对象 ： 就是一种编程思想，是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</strong></h2><p>如我要造辆车：</p>
+<p>Step1. 设计画图&#x3D;&gt;保时捷设计所</p>
+<p>Step2. 原材料：发动机&#x3D;&gt;秋名山神车五菱发动机；变速箱&#x3D;&gt;巨力三轮车24速手动变速箱；轮胎&#x3D;&gt;青岛双星牌；底盘&#x3D;&gt;兰博基尼大牛；座椅&#x3D;&gt;香奈儿</p>
+<p>Step3. 组装&#x3D;&gt;东莞代工厂</p>
+<p>Step4. 贴牌&#x3D;&gt;Step5. 测试&#x3D;&gt;C-NCAP&#x3D;&gt;10星安全法兰保牌<br>例如<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU0JUJBJTk0JUU1JUFEJTkwJUU2JUEzJThCJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">五子棋</span>，<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU5JTlEJUEyJUU1JTkwJTkxJUU4JUJGJTg3JUU3JUE4JThCJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">面向过程</span>的设计思路就是首先分析问题的步骤：1、开始游戏，2、黑子先走，3、绘制画面，4、判断输赢，5、轮到白子，6、绘制画面，7、判断输赢，8、返回步骤2，9、输出最后结果。把上面每个步骤用分别的函数来实现，问题就解决了。 </p>
+<p>而<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU5JTlEJUEyJUU1JTkwJTkxJUU1JUFGJUI5JUU4JUIxJUExJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">面向对象</span>的设计则是从另外的思路来解决问题。整个<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU0JUJBJTk0JUU1JUFEJTkwJUU2JUEzJThCJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">五子棋</span>可以分为 1、黑白双方，这两方的行为是一模一样的，2、棋盘系统，负责绘制画面，3、规则系统，负责判定诸如犯规、输赢等。第一类对象（玩家对象）负责接受用户输入，并告知第二类对象（棋盘对象）棋子布局的变化，棋盘对象接收到了棋子的i变化就要负责在屏幕上面显示出这种变化，同时利用第三类对象（规则系统）来对棋局进行判定。 </p>
+<p>可以明显地看出，<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU5JTlEJUEyJUU1JTkwJTkxJUU1JUFGJUI5JUU4JUIxJUExJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">面向对象</span>是以功能来划分问题，而不是步骤。同样是绘制棋局，这样的行为在<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU5JTlEJUEyJUU1JTkwJTkxJUU4JUJGJTg3JUU3JUE4JThCJnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">面向过程</span>的设计中分散在了总多步骤中，很可能出现不同的绘制版本，因为通常设计人员会考虑到实际情况进行各种各样的简化。而面向对象的设计中，绘图只可能在棋盘对象中出现，从而保证了绘图的统一。 </p>
+<p>功能上的统一保证了面向对象设计的<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9JUU1JThGJUFGJUU2JTg5JUE5JUU1JUIxJTk1JUU2JTgwJUE3JnRuPVNFX1BjWmhpZGFvbndoY19uZ3BhZ21qeiZyc3ZfZGw9Z2hfcGNfemhpZGFv">可扩展性</span>。比如我要加入悔棋的功能，如果要改动面向过程的设计，那么从输入到判断到显示这一连串的步骤都要改动，甚至步骤之间的循序都要进行大规模调整。如果是面向对象的话，只用改动棋盘对象就行了，棋盘系统保存了黑白双方的棋谱，简单回溯就可以了，而显示和规则判断则不用顾及，同时整个对对象功能的调用顺序都没有变化，改动只是局部的。 </p>
+<p><em><strong>*(a+b) * c - e&#x2F;f + d%j*</strong></em> </p>
+<p><em><strong>*那么，面向对象和面向过程哪种好呢？各有各个好*</strong></em></p>
+<p>面向对象和面向过程都是软件开发的一种编程思想，要真正的理解一种编程思想，或者说应用在实际的开发设计中，并不是看几本书，听我说几句就能搞定的事情，需要先了解，在实际开发中应用，这样不断的思考分析、积累，从而达到理解。</p>
+<p>举个事例，现在我手上接了一个500W的项目，接下来我需要完成这个项目，现在我有两个选择：第一是自己一人开发；第二是组建团队或者说外包。</p>
+<p>****第一，自己一个人独立开发****。那么我需要做的事情可能就包括了：需求搜集、分析，原型设计，项目架构设计，编码实现，项目测试，项目实施等等。其中每一件事情都必须亲力亲为，感觉心里倒也踏实，不过这个过程可能是这样：</p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF653.tmp.jpg" alt="img"> </p>
+<p>哈哈，接了个单高高兴兴敲代码！！</p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF654.tmp.jpg" alt="img"> </p>
+<p>丫，咋还出bug了呢，纳尼。。。</p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF655.tmp.jpg" alt="img"> </p>
+<p>不会吧，我都调试3个通宵了。。。</p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF656.tmp.jpg" alt="img"> </p>
+<p>糟糕，我要崩溃了，。。。</p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF657.tmp.jpg" alt="img"> </p>
+<p>算了，我想睡一会儿（安息吧！）</p>
+<p><em><strong>*第二，组建团队开发*</strong></em></p>
+<p><img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF658.tmp.jpg" alt="img"> </p>
+<p>有了自己的团队之后，就可以不用再陪客户喝茶、吃饭、聊天、（售前售后）；不用再排异常、找bug、调网络（攻城狮）;不用再反复修改设计方案版本（射鸡湿）。那么我现在做什么呢？当然是数钱啦（嘿嘿…纯洁的笑容）<img data-src="E:\Java20220921\1.课件\08方法重载&工具类&类和对象\doc\imgs\wpsF659.tmp.jpg" alt="img">。</p>
+<p>其实我现在做的就是管理好我的团队，分配好任务，控制项目进度等，在整个过程中充当指挥者的角色。</p>
+<p>上面的两个事例第一种是面向过程的做事方式，第二种是面向对象的做事方式。通过这样的事例从面向对象某一些方面的特征来简单的让大家有一个认识而已，更多的内容需要通过后面章节来逐步了解、加深。</p>
+<h1 id="2-类与对象"><a href="#2-类与对象" class="headerlink" title="2 类与对象"></a><strong>2</strong> <strong>类与对象</strong></h1><p>1 类和对象(引入)</p>
+<p>比如做一个学生管理系统的项目 ：</p>
+<p><img data-src="/img%5Cwps8FDC.tmp.jpg" alt="img"></p>
+<p>现在模拟一种场景：现实的世界和虚拟的世界</p>
+<p><img data-src="/img%5Cwps8FDD.tmp.jpg" alt="img"> </p>
+<p>现实生活中，学生过来学习要填写一个学员信息表。纸质文档不利于后期查询和维护，并且处理数据的效率极其底下。</p>
+<p>所以需要做一个系统，我们需要做什么事情：</p>
+<p>①需要设计一个模板 &#x3D;&gt; 设计一个类</p>
+<p>②复制该模板 &#x3D;&gt; 创建对象</p>
+<p>③填写具体的信息 &#x3D;&gt; 对象赋值</p>
+<p>④查询信息 &#x3D;&gt; 对象取值</p>
+<p>做这件事（设计模板和录入信息）之前先了解两个概念：类和对象。</p>
+<h2 id="3-2-类和对象-理解"><a href="#3-2-类和对象-理解" class="headerlink" title="3.2 类和对象(理解)"></a><strong>3.2 类和对象(理解)</strong></h2><p>****什么是类？\</p>
+<p>类是具备某些共同特征的实体的集合，是对所具有相同特征实体的抽象， 例如人类、车类、星球类,动物类, 猪类等</p>
+<p>****什么是对象？\</p>
+<p>对象是类的实例，简单的认为对象就是类中具体的个体<br>用一个例子给你说明一下他们的关系：<br>比如“人类”就是一个类，那么具体的某个人“张三”就是“人类”这个类的对象，而“名字、年龄”等信息就是对象的属性，人的动作比如“吃饭、穿衣”等就是对象的方法</p>
+<p>类和对象的关系请看下面的图例：</p>
+<p><img data-src="/img%5Cwps8FED.tmp.jpg" alt="img"> </p>
+<p><img data-src="/img%5Cwps8FEE.tmp.jpg" alt="img"> </p>
+<p>类 &#x3D;&gt;【模板】</p>
+<p>创建对象 &#x3D;&gt;【复制模板】</p>
+<p>java语言世界：万事万物皆对象</p>
+<p><strong>通常都会将对象划分为两个部分，即动态部分（方法）与静态部分（成员变量）。</strong></p>
+<p>①静态部分：顾名思义就是不能动的部分，这个部分被称为“属性”，如一个人，它包括高矮、胖瘦、性别、年龄等属性——成员变量。</p>
+<p>②动态部分：人可以哭泣、微笑、说话、行走，这些是这个人具备的行为（动态部分）——方法。</p>
+<p>​	</p>
+<h1 id="3-设计类（重点）"><a href="#3-设计类（重点）" class="headerlink" title="3 设计类（重点）"></a><strong>3 设计类（重点）</strong></h1><h2 id="3-1-定义类"><a href="#3-1-定义类" class="headerlink" title="3.1 定义类"></a><strong>3.1 定义类</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">设计类语法：</span><br><span class="line"><span class="keyword">public</span> class 类名&#123; </span><br><span class="line">	<span class="comment">//可编写 0 到 N 个成员变量 </span></span><br><span class="line">	[修饰符] 数据类型 变量名 <span class="number">1</span>; </span><br><span class="line">	[修饰符] 数据类型 变量名 <span class="number">2</span>; </span><br><span class="line">	<span class="comment">//可编写 0 到 N 个成员方法 </span></span><br><span class="line">	[修饰符] 返回值类型 方法名称(参数)&#123; </span><br><span class="line">		<span class="comment">//方法体 </span></span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>类规范书写：</p>
+<p>① 类名大驼峰，见名知意</p>
+<p>② 成员变量名小驼峰，见名知意</p>
+<p>③ 类和成员变量上方必须写文档注释；</p>
+<h1 id="4-创建对象和成员变量赋值取值（重点）"><a href="#4-创建对象和成员变量赋值取值（重点）" class="headerlink" title="4 创建对象和成员变量赋值取值（重点）"></a><strong>4</strong> <strong>创建对象和成员变量赋值取值（重点）</strong></h1><p><strong>4创建对象</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建对象语法：</span><br><span class="line">类名 对象名 = <span class="keyword">new</span> 类名();</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentTest</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">//3.1. 创建对象（相当于复制模板）: 语法： 类名 对象名 = new 类名();</span></span><br><span class="line">		<span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();<span class="comment">//必须声明一个Student类型的变量接收当前对象地址</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>4.2给对象成员变量赋值</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">给成员变量赋值语法：</span><br><span class="line">对象名.成员变量 = 值; <span class="comment">//注意：必须值和成员变量数据类型一致</span></span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentTest</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">//3.1. 创建对象（相当于复制模板）: 语法：类名 对象名 = new 类名();</span></span><br><span class="line">		<span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();<span class="comment">//必须声明一个Student类型的变量接收当前对象地址</span></span><br><span class="line">		<span class="comment">//3.2. 对象赋值（填写信息）	语法：	对象名.成员变量 = 值;</span></span><br><span class="line">		student.name = <span class="string">&quot;苍老师&quot;</span>;</span><br><span class="line">		student.age = <span class="number">37</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-3对象取值和对象调用实例方法"><a href="#4-3对象取值和对象调用实例方法" class="headerlink" title="4.3对象取值和对象调用实例方法"></a><strong>4.3对象取值和对象调用实例方法</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">对象取值语法：</span><br><span class="line">对象名.成员变量 ; </span><br><span class="line">对象调用实例方法：</span><br><span class="line">   对象名.方法名(…);</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentTest</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">//3.1. 创建对象（相当于复制模板）: 语法：类名 对象名 = new 类名();</span></span><br><span class="line">		<span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();<span class="comment">//必须声明一个Student类型的变量接收当前对象地址</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//3.2. 对象赋值（填写信息）	语法：	对象名.成员变量 = 值;</span></span><br><span class="line">		student.name = <span class="string">&quot;苍老师&quot;</span>;</span><br><span class="line">		student.age = <span class="number">37</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//3.3. 对象取值（相当于查询信息）	语法：	对象名.成员变量;</span></span><br><span class="line">		System.out.println(student.name);<span class="comment">//&quot;苍老师&quot;	</span></span><br><span class="line">		System.out.println(student.age);<span class="comment">//37		</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//3.4. 对象调用非static(实例)方法	语法：	对象名.方法名(...);</span></span><br><span class="line">		student.study();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-4堆栈内存图分析代码（了解）"><a href="#4-4堆栈内存图分析代码（了解）" class="headerlink" title="4.4堆栈内存图分析代码（了解）:"></a><strong>4.4堆栈内存图分析代码（了解）:</strong></h2><p>下面使用堆栈内存图来解释一下上面代码的流程和存储。从下图中可以看到：</p>
+<p>① 每创建一个对象都会在堆内存中开辟一块空间，并且这块空间中具有和类（模板）中一样的成员。</p>
+<p>② 每一个对象都被栈中的一个变量所指向，所以操作栈中的变量（student）就如同操作堆中的对象。</p>
+<p>③ student.name &#x3D; “苍老师”;其实是把字符串值赋值给student变量指向的堆中的name字段上的，而不是设置给类的，所以我们在分析代码的时候，看到new Student（）对象应该立马想到在堆中有一个对象。</p>
+<p><img data-src="/img%5Cwps8FFF.tmp.png" alt="img"></p>
+<h1 id="5-构造方法（Constructor）-重点"><a href="#5-构造方法（Constructor）-重点" class="headerlink" title="5 构造方法（Constructor）(重点)"></a><strong>5</strong> <strong>构造方法（Constructor）(重点)</strong></h1><h2 id="5-1-构造方法引入"><a href="#5-1-构造方法引入" class="headerlink" title="5.1 构造方法引入"></a><strong>5.1 构造方法引入</strong></h2><p>new Student();  创建一个学生类的对象 </p>
+<p>上面代码本质是调用Student中的无参数的构造方法！</p>
+<h2 id="5-2-什么是构造方法"><a href="#5-2-什么是构造方法" class="headerlink" title="5.2 什么是构造方法"></a><strong>5.2</strong> <strong>什么是构造方法</strong></h2><ol>
+<li><p>   构造方法的结构和普通方法类似，但是和普通方法完全不同两个代码块；</p>
+</li>
+<li><p>   构造方法也是方法，意味着使用了构造方法，方法会执行，也能完成功能</p>
+</li>
+<li><p>   构造方法就是一个代码块【就是一个结构 ，构造方法和 字段  方法一样都是一个****类中的成员之一\】</p>
+</li>
+<li><p>   构造方法也该存在于类的结构体中</p>
+</li>
+</ol>
+<p>构造方法语法：</p>
+<ol>
+<li><p>构造方法的名字和类名完全一致（包括大小写完全一致）	</p>
+</li>
+<li><p>没有返回值类型（void也不行）	 </p>
+</li>
+<li><p>构造方法方法体不能返回任何的值（即不能在方法体中return 值）</p>
+</li>
+<li><p>其他的和普通方法类似 ，可以有修饰符（public、protected、private、默认）,可以有形参列表</p>
+</li>
+<li><p>构造方法必须有方法体</p>
+</li>
+<li><p>构造方法不能有任何非访问性质的修饰符修饰，例如 static、final、synchronized、abstract等都不能修饰构造方法。</p>
+<p>注意：new Student() 这个整体既是一个Student对象，又是调用的Student的无参数构造方法</p>
+</li>
+</ol>
+<h2 id="5-3-构造方法特点"><a href="#5-3-构造方法特点" class="headerlink" title="5.3 构造方法特点"></a><strong>5.3 构造方法特点</strong></h2><p>1.类中构造方法特点：</p>
+<p>① 每一个类中都至少有一个构造方法;</p>
+<p>②	如果没有看到（显示的），那么存在一个隐式的无参数的构造方法;</p>
+<p>③	如果一个类中有显示的构造方法，那么隐式的无参的构造方法就不存在了;</p>
+<h2 id="5-4-构造方法的作用"><a href="#5-4-构造方法的作用" class="headerlink" title="5.4 构造方法的作用"></a><strong>5.4 构造方法的作用</strong></h2><p>在创建对象的同时给对象的成员变量赋值（初始化工作）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">设计类语法：</span><br><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">成员变量  (字段); </span><br><span class="line">构造方法（有参、无参）;</span><br><span class="line">方法 (具体的一个功能行为); </span><br><span class="line">&#125;</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">	<span class="comment">/**姓名*/</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="comment">/**年龄*/</span></span><br><span class="line">	<span class="type">int</span> age;	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 无参构造</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;User无参构造...&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 有参构造</span></span><br><span class="line"><span class="comment">	 * 形参个数由需求决定</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String n,<span class="type">int</span> a)</span> &#123;</span><br><span class="line">		name = n;<span class="comment">//将传入的n的值赋值给成员变量name</span></span><br><span class="line">		age = a;<span class="comment">//将传入的a的值赋值给成员变量age</span></span><br><span class="line">		System.out.println(<span class="string">&quot;User有参构造...&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">playGame</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;耍鸟...&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-5-构造方法注意事项和小结"><a href="#5-5-构造方法注意事项和小结" class="headerlink" title="5.5 构造方法注意事项和小结"></a><strong>5.5</strong> <strong>构造方法注意事项和小结</strong></h2><p>1 普通方法不要和类名一致，行业默认规则;</p>
+<p>2 普通方法（Method）和构造方法(Constructor)是不同的两种结构</p>
+<p>2.1	普通方法的调用  ： 3种 </p>
+<p>2.1.1	类名.方法名(…);		-有static修饰的 </p>
+<p>2.1.2	对象名.方法名(…);</p>
+<p>2.1.3	方法名(…);		–同一个类里面 都要static 或 都没有static修饰</p>
+<p>2.2	构造方法的调用  ： </p>
+<p>（目前为止）  new 类名(…);</p>
+<h1 id="7-课程总结"><a href="#7-课程总结" class="headerlink" title="7 课程总结"></a><strong>7</strong> <strong>课程总结</strong></h1><h2 id="7-1重点"><a href="#7-1重点" class="headerlink" title="7.1重点"></a><strong>7.1重点</strong></h2><p>设计类、创建对象、构造方法</p>
+<h2 id="7-2难点"><a href="#7-2难点" class="headerlink" title="7.2难点"></a><strong>7.2难点</strong></h2><p>构造方法</p>
+<h1 id="8-课后练习"><a href="#8-课后练习" class="headerlink" title="8.课后练习"></a><strong>8.课后练习</strong></h1><p>1.定义一个长方形的类（<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20vbGluaz91cmw9UFdvOTBkVzNMSGRNMHhJd0diQ2tKQ09hX1E4c2lVLW91Ry1ORHYtLW1jY1M4NUVORmtrWmxuVzRHTTlpNU1adWZJWDRZTXlnd3BMRkdxUl9JQnVQcXlSeWJSbG9Ma1RuVk1VTWNXZHh4RWk=">Rectangle</span>），类中定义</p>
+<p>两个成员变量：一个长(height)和一个宽(width)；</p>
+<p>定义求面积的方法：public double getArea(){方法体}</p>
+<p>  并写测试类进行测试；</p>
+<p>​		创建2个长方形对象，给成员变量赋值，并且调用求面积方法</p>
+<p>​	</p>
+<p>2.定义一个狗狗类，狗狗</p>
+<p>有如下属性：性别，姓名	</p>
+<p>有如下方法： void eat(String food)方法</p>
+<p>请写一个测试类测试：</p>
+<p>创建2个狗狗对象:</p>
+<p>一个名字 赋值为 苍苍，性别：母狗	吃：大香肠（用有参构造实现成员变量赋值），并且调用对象的吃方法</p>
+<p>一个名字 赋值为 鹰鹰，性别：公狗	吃：大枣馒头（用有参构造实现成员变量赋值），并且调用对象的吃方法</p>
+<h1 id="9-面试题"><a href="#9-面试题" class="headerlink" title="9.面试题"></a><strong>9.面试题</strong></h1><p> 9.1.全局变量与局部变量的区别</p>
+<p>全局变量： </p>
+<p>局部变量： </p>
+<h1 id="10-扩展知识或课外阅读推荐"><a href="#10-扩展知识或课外阅读推荐" class="headerlink" title="10.扩展知识或课外阅读推荐"></a><strong>10.扩展知识或课外阅读推荐</strong></h1><p>code-style</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-02-11 11:26:28" itemprop="dateModified" datetime="2023-02-11T11:26:28+08:00">2023-02-11</time>
+  </span>
+  <span id="2023/02/11/面向对象1-类和对象/面向对象1-类和对象/" class="item leancloud_visitors" data-flag-title="面向对象1-类和对象" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="IT_Arfan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="IT_Arfan 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="IT_Arfan 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>IT_Arfan <i class="ic i-at"><em>@</em></i>IT_Arfan's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://itarfan.gethub.io/2023/02/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" title="面向对象1-类和对象">https://itarfan.gethub.io/2023/02/11/面向对象1-类和对象/面向对象1-类和对象/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DSA=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%96%B9%E6%B3%95/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%96%B9%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclg5ms2rj20zk0m8u0x.jpg" title="JAVA语法基础-方法">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>JAVA语法基础-方法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">课程介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">1 初识面向对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B-%EF%BC%9A%E6%98%AF%E4%B8%80%E7%A7%8D%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%88%86%E6%9E%90%E5%87%BA%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%8C%E7%84%B6%E5%90%8E%E7%94%A8%E5%87%BD%E6%95%B0%E6%8A%8A%E8%BF%99%E4%BA%9B%E6%AD%A5%E9%AA%A4%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%AE%9E%E7%8E%B0%EF%BC%8C%E4%BD%BF%E7%94%A8%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%80%E4%B8%AA%E4%B8%80%E4%B8%AA%E4%BE%9D%E6%AC%A1%E8%B0%83%E7%94%A8%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">1. 面向过程 ：是一种编程思想，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%EF%BC%9A-%E5%B0%B1%E6%98%AF%E4%B8%80%E7%A7%8D%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%EF%BC%8C%E6%98%AF%E6%8A%8A%E6%9E%84%E6%88%90%E9%97%AE%E9%A2%98%E4%BA%8B%E5%8A%A1%E5%88%86%E8%A7%A3%E6%88%90%E5%90%84%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BB%BA%E7%AB%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%9B%AE%E7%9A%84%E4%B8%8D%E6%98%AF%E4%B8%BA%E4%BA%86%E5%AE%8C%E6%88%90%E4%B8%80%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%8C%E8%80%8C%E6%98%AF%E4%B8%BA%E4%BA%86%E6%8F%8F%E5%8F%99%E6%9F%90%E4%B8%AA%E4%BA%8B%E7%89%A9%E5%9C%A8%E6%95%B4%E4%B8%AA%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E6%AD%A5%E9%AA%A4%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E3%80%82"><span class="toc-number">3.1.</span> <span class="toc-text">1**.**2 面向对象 ： 就是一种编程思想，是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">2 类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1-%E7%90%86%E8%A7%A3"><span class="toc-number">4.1.</span> <span class="toc-text">3.2 类和对象(理解)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%AE%BE%E8%AE%A1%E7%B1%BB%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">3 设计类（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-number">5.1.</span> <span class="toc-text">3.1 定义类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E5%8F%96%E5%80%BC%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">4 创建对象和成员变量赋值取值（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3%E5%AF%B9%E8%B1%A1%E5%8F%96%E5%80%BC%E5%92%8C%E5%AF%B9%E8%B1%A1%E8%B0%83%E7%94%A8%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">4.3对象取值和对象调用实例方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%BB%A3%E7%A0%81%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">4.4堆栈内存图分析代码（了解）:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%88Constructor%EF%BC%89-%E9%87%8D%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">5 构造方法（Constructor）(重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%BC%95%E5%85%A5"><span class="toc-number">7.1.</span> <span class="toc-text">5.1 构造方法引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.</span> <span class="toc-text">5.2 什么是构造方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%89%B9%E7%82%B9"><span class="toc-number">7.3.</span> <span class="toc-text">5.3 构造方法特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">7.4.</span> <span class="toc-text">5.4 构造方法的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E5%B0%8F%E7%BB%93"><span class="toc-number">7.5.</span> <span class="toc-text">5.5 构造方法注意事项和小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">7 课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1%E9%87%8D%E7%82%B9"><span class="toc-number">8.1.</span> <span class="toc-text">7.1重点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2%E9%9A%BE%E7%82%B9"><span class="toc-number">8.2.</span> <span class="toc-text">7.2难点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E8%AF%BE%E5%90%8E%E7%BB%83%E4%B9%A0"><span class="toc-number">9.</span> <span class="toc-text">8.课后练习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">10.</span> <span class="toc-text">9.面试题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E6%89%A9%E5%B1%95%E7%9F%A5%E8%AF%86%E6%88%96%E8%AF%BE%E5%A4%96%E9%98%85%E8%AF%BB%E6%8E%A8%E8%8D%90"><span class="toc-number">11.</span> <span class="toc-text">10.扩展知识或课外阅读推荐</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="IT_Arfan"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">IT_Arfan</p>
+  <div class="description" itemprop="description">欢迎大家! 这个博客是我的私人博客。在这个博客里我将广泛讨论一系列IT话题,包括(但不限于)IT话题！！！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">14</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lvdXJuYW1l" title="https:&#x2F;&#x2F;github.com&#x2F;yourname"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnlvdXJuYW1lQG1haWwuY29t" title="mailto:yourname@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" title="JAVA语法基础-嵌套循环结构">JAVA语法基础-嵌套循环结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" title="面向对象1-类和对象">面向对象1-类和对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/Eclipse&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&%E5%B8%B8%E9%87%8F&%E5%8F%98%E9%87%8F/" title="Eclipse&amp;基础语法&amp;数据类型&amp;常量&amp;变量">Eclipse&基础语法&数据类型&常量&变量</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/Inter/01_java%E9%9D%A2%E8%AF%95%E9%A2%98%E5%85%A8%E8%A6%86%E7%9B%96-%E9%A1%BA%E5%BA%8F%E8%B0%83%E6%95%B4%E7%89%88/" title="面试题">面试题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%96%B9%E6%B3%95/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%96%B9%E6%B3%95/" title="JAVA语法基础-方法">JAVA语法基础-方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84&%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" title="JAVA语法基础-选择结构&amp;循环结构">JAVA语法基础-选择结构&循环结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/Web/Web/" title="WEB基础">WEB基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/10/%E5%BE%AE%E6%9C%8D%E5%8A%A1/ElasticSearch/" title="ElasticSearch基础">ElasticSearch基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/11/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%95%B0%E7%BB%84%E5%85%A5%E9%97%A8/JAVA%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%95%B0%E7%BB%84%E5%85%A5%E9%97%A8/" title="JAVA语法基础-数组入门">JAVA语法基础-数组入门</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">IT_Arfan @ IT_Arfan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9pdGFyZmFuLmNu">ITArfan</span> & Blog.<span class="exturl" data-url="aHR0cHM6Ly9JVEFyZmFuLmdpdGh1Yi5pbw==">IT_Arfan</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/02/11/面向对象1-类和对象/面向对象1-类和对象/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
